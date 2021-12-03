@@ -1,0 +1,19 @@
+.pol-container {
+    border: 5px solid brown;
+    margin-bottom: 10px;
+    width: 60%;
+}
+p {
+    color: brown;
+    font-weight: 600;
+}
+.name {
+    font-size: 30px;
+}
+.top-lines {
+    font-size: 25px;
+    font-weight: 500;
+}
+body {
+    background: lightgoldenrodyellow;
+}
