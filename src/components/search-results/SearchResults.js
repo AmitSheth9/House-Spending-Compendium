@@ -10,7 +10,7 @@ export default function SearchResult({searchResult}) {
                     <p>Office: {result.office_full}</p>
                     <p>Party: {result.party_full}</p>
                     <p>State: {result.state}</p>
-                    <p>Name: {result.name}</p>
+
                     </div>
 
             }))}
