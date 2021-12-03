@@ -10,6 +10,7 @@ import Filter from '../../components/Forms/Filter';
 
 export default function Compendium() {
 
+const [loading, setLoading] = useState(false);
 const [candidateArr, setCandidateArr] = useState([]);
 const [searchQuery, setSearchQuery] = useState('fire');
 const [searchResult, setSearchResult] = useState([]);
@@ -26,19 +27,23 @@ const [selectedSort, setSelectedSort] = useState('receipts');
 */
 useEffect(() => {
     async function getSortedCandidates() {
+        setLoading(true);
         const sortedCandidates = await fetchSortedCandidates(selectedSort);
         console.log(sortedCandidates);
         setCandidateArr(sortedCandidates);
+        setLoading(false);
     }
     getSortedCandidates();
 }, [selectedSort])
 
 const handleSubmit = async (event) => {
+    setLoading(true);
     event.preventDefault();
 
     const searchResponse = await fetchSearchQuery(searchQuery);
     console.log(searchResponse);
     setSearchResult(searchResponse);
+    setLoading(false);
     setSearchQuery('');
     
 }
@@ -47,9 +52,16 @@ const handleSubmit = async (event) => {
             <Search setSearchQuery={setSearchQuery}
                     handleSubmit={handleSubmit} />
             <Filter selectedSort={selectedSort} setSelectedSort={setSelectedSort} />
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
             <SearchResults searchResult={searchResult} />
+            )}
+            {loading ? (
+                <p>Loading Corruption...</p>
+            ) : (
             <Candidates candidateArr={candidateArr} />
-            
+            )}
         </div>
     )
 }
