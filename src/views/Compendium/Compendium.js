@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { fetchByReceipts, fetchSearchQuery, fetchSortedCandidates } from '../../services/Fetch'
+import { fetchSearchQuery, fetchSortedCandidates } from '../../services/Fetch'
 import Candidates from '../../components/candidates/Candidates';
 import Search from '../../components/Forms/Search';
 import SearchResults from '../../components/search-results/SearchResults';
