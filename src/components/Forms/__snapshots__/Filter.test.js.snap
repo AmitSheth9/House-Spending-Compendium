@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Filter component 1`] = `
+<div>
+  <div>
+    <select>
+      <option
+        value="disbursements"
+      >
+        Disbursements
+      </option>
+      <option
+        value="receipts"
+      >
+        Receipts
+      </option>
+      <option
+        value="cash_on_hand_end_period"
+      >
+        Cash on Hand
+      </option>
+      <option
+        value="debts_owed_by_committee"
+      >
+        Debts owed by Committee
+      </option>
+    </select>
+  </div>
+</div>
+`;

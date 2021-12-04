@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render our Candidates component 1`] = `
+<div>
+  <div>
+    <div
+      class="pol-container"
+    >
+      <p
+        class="name"
+      >
+        john
+      </p>
+      <p
+        class="top-lines"
+      >
+        Receipts: 
+        30000
+      </p>
+      <p
+        class="top-lines"
+      >
+        Disbursements: 
+        4000
+      </p>
+      <br />
+      <p>
+        Party: 
+        pickle party
+      </p>
+      <p>
+        Cycle: 
+        2020
+      </p>
+      <p>
+        State: 
+        ca
+      </p>
+      <p>
+        Cash on Hand: 
+        3000
+      </p>
+    </div>
+  </div>
+</div>
+`;
