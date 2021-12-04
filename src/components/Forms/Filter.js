@@ -1,4 +1,5 @@
 import React from 'react'
+import './forms.css'
 
 export default function Filter({setSelectedSort, selectedSort}) {
     return (

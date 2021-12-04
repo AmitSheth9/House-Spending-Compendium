@@ -5,7 +5,7 @@ export default function Candidates({candidateArr}) {
     return (
         <div>
             {candidateArr.map((candidate => {
-                return <div className='pol-container'key={candidate.candidate_id}>
+                return <div className='pol-container' key={candidate.candidate_id}>
                     <p className='name'>{candidate.name}</p>
                     <p className='top-lines'>Receipts: {candidate.receipts}</p>
                     <p className='top-lines'>Disbursements: {candidate.disbursements}</p>

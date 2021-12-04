@@ -1,12 +1,12 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { fetchByReceipts } from '../../services/Fetch'
+import { fetchByReceipts, fetchSearchQuery, fetchSortedCandidates } from '../../services/Fetch'
 import Candidates from '../../components/candidates/Candidates';
 import Search from '../../components/Forms/Search';
-import { fetchSearchQuery } from '../../services/Fetch';
 import SearchResults from '../../components/search-results/SearchResults';
-import { fetchSortedCandidates } from '../../services/Fetch';
+
 import Filter from '../../components/Forms/Filter';
+import './Compendium.css'
 
 export default function Compendium() {
 
@@ -28,6 +28,7 @@ const [selectedSort, setSelectedSort] = useState('receipts');
 useEffect(() => {
     async function getSortedCandidates() {
         setLoading(true);
+        setSearchResult([]);
         const sortedCandidates = await fetchSortedCandidates(selectedSort);
         console.log(sortedCandidates);
         setCandidateArr(sortedCandidates);
@@ -49,6 +50,7 @@ const handleSubmit = async (event) => {
 }
     return (
         <div>
+            <p className='title'>2020 US HOUSE OF REPRESENTATIVES DATA</p>
             <Search setSearchQuery={setSearchQuery}
                     handleSubmit={handleSubmit} />
             <Filter selectedSort={selectedSort} setSelectedSort={setSelectedSort} />
